@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | PHIL 3050</title>
     
-    <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
@@ -37,32 +36,52 @@
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col selection:bg-pragmatic-sage selection:text-white">
 
-    <!-- Modern Dashboard Navigation -->
     <nav class="sticky top-0 w-full bg-white border-b border-slate-200 z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="font-display text-2xl font-bold tracking-tight text-pragmatic-heading flex items-center gap-2">
                 <div class="w-8 h-8 rounded bg-pragmatic-forest text-white flex items-center justify-center text-sm">3050</div>
                 Ethical Theory
             </div>
+            
             <div class="hidden md:flex gap-8 text-sm text-slate-500">
                 <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Overview</a>
-                <a href="{{ '/schedule/' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
-                <a href="{{ '/resources/' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+                <a href="{{ '/schedule.html' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
+                <a href="{{ '/resources.html' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-pragmatic-forest focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-50 border-t border-slate-200 shadow-inner">
+            <div class="px-6 py-4 flex flex-col gap-4 text-sm text-slate-600 font-medium">
+                <a href="{{ '/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/' %}text-pragmatic-forest{% endif %}">Overview</a>
+                <a href="{{ '/schedule.html' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/schedule.html' %}text-pragmatic-forest{% endif %}">Schedule</a>
+                <a href="{{ '/resources.html' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/resources.html' %}text-pragmatic-forest{% endif %}">Resources</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="flex-grow max-w-6xl mx-auto px-6 w-full pt-16 pb-24">
         {{ content }}
     </main>
     
-    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-8 text-center text-sm text-slate-500 mt-auto">
         <div class="max-w-6xl mx-auto px-6">
             © 2026 Dr. Kevin J. Patton. UNO Philosophy Department.
         </div>
     </footer>
 
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
