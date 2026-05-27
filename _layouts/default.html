@@ -45,8 +45,8 @@
             
             <div class="hidden md:flex gap-8 text-sm text-slate-500">
                 <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Overview</a>
-                <a href="{{ '/schedule.html' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
-                <a href="{{ '/resources.html' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+                <a href="{{ '/schedule/' | relative_url }}" class="nav-link {% if page.url == '/schedule/' %}active{% endif %}">Schedule</a>
+                <a href="{{ '/resources/' | relative_url }}" class="nav-link {% if page.url == '/resources/' %}active{% endif %}">Resources</a>
             </div>
 
             <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-pragmatic-forest focus:outline-none">
@@ -59,8 +59,8 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-50 border-t border-slate-200 shadow-inner">
             <div class="px-6 py-4 flex flex-col gap-4 text-sm text-slate-600 font-medium">
                 <a href="{{ '/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/' %}text-pragmatic-forest{% endif %}">Overview</a>
-                <a href="{{ '/schedule/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/schedule.html' %}text-pragmatic-forest{% endif %}">Schedule</a>
-                <a href="{{ '/resources/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/resources.html' %}text-pragmatic-forest{% endif %}">Resources</a>
+                <a href="{{ '/schedule/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/schedule/' %}text-pragmatic-forest{% endif %}">Schedule</a>
+                <a href="{{ '/resources/' | relative_url }}" class="hover:text-pragmatic-forest {% if page.url == '/resources/' %}text-pragmatic-forest{% endif %}">Resources</a>
             </div>
         </div>
     </nav>
